@@ -3,8 +3,8 @@ package com.example.lifesimulator.view_model
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.lifesimulator.model.AfficPersonneAdapter
-import com.example.lifesimulator.model.BureauAdapter
+import com.example.lifesimulator.view.AfficPersonneAdapter
+import com.example.lifesimulator.view.BureauAdapter
 import com.example.lifesimulator.model.Constantes
 import com.example.lifesimulator.model.Genre
 import com.example.lifesimulator.model.Model
@@ -16,7 +16,7 @@ class ViewModelPagePrincipale: ViewModel() {
     var listePersonnes = MutableLiveData(Model.listePersonnes)
     var listePersonnesBureau = MutableLiveData(mutableListOf<Personne>())
 
-    //Adapteurs des fragments pour facilemnt dire ce qui a changé
+    //Adapteurs des fragments pour facilement dire ce qui a changé
     var adapteurBureau: BureauAdapter? = null
     var adapterListePersonnes: AfficPersonneAdapter? = null
 
@@ -82,9 +82,9 @@ class ViewModelPagePrincipale: ViewModel() {
             }
         }
 
-        //Pour éviter qu'un fils se marie avec sa tante ou quelqun de bien plus haut
-        if(personne1.generation != personne2.generation){
-            Log.i("Snack", "Les 2 doivent être de la même génération")
+        //Pour éviter qu'un fils se marie avec sa tante ou sa soeur
+        if(personne1.famille != null && personne1.famille == personne2.famille){
+            Log.i("Snack", "Les 2 doivent ne peuvent pas être de la même famille")
             return
         }
 
@@ -109,7 +109,11 @@ class ViewModelPagePrincipale: ViewModel() {
             Log.i("Snack", "Autoriser celle liaison serait un danger pour la survie de la population (selon Kant)")
         }
 
-        personne1.marier(personne2.id)
+        val homme = if (personne1.genre == Genre.F) personne1 else personne2
+        val femme = if (personne1.genre == Genre.M) personne1 else personne2
+
+        homme.marier(femme)
+
         Log.i("Snack", "Le mariage fût un succès!")
         adapteurBureau!!.notifyItemRangeChanged(0, 2)
     }

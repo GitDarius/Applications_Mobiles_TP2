@@ -10,7 +10,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesimulator.R
-import com.example.lifesimulator.model.BureauAdapter
 import com.example.lifesimulator.model.Personne
 import com.example.lifesimulator.view_model.ViewModelPagePrincipale
 

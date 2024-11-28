@@ -16,15 +16,20 @@ data class Personne(
     var age: Int,
     val enfants: MutableList<Int>,
     var pereId: Int?,
-    var generation: Int
+    var famille: String?
 ){
-    fun marier(conjointId: Int){
+    fun marier(conjoint: Personne?){
         //Le marriage va dans les 2 sens
-        this.conjointId = conjointId
-        val conjoint = personne(conjointId)
-
         if(conjoint != null){
+            this.conjointId = conjoint.id
             conjoint.conjointId = id
+            if(famille != null){
+                conjoint.famille = famille
+            }else{
+                val nouvelleFamille = "${nom}-${conjoint.nom}"
+                famille = nouvelleFamille
+                conjoint.famille = nouvelleFamille
+            }
         }else{
             Log.i("TAG", "Conjoint pas trouvé")
         }
@@ -41,9 +46,9 @@ data class Personne(
             conjointId = null,
             genre = genre,
             age = 0,
-            mutableListOf(),
-            this.id,
-            generation = generation+1
+            enfants = mutableListOf(),
+            pereId = this.id,
+            famille = this.famille
         )
         enfants.add(bebe.id)
         Model.listePersonnes.add(bebe)

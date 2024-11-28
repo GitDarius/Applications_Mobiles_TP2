@@ -7,11 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesimulator.R
-import com.example.lifesimulator.model.AfficPersonneAdapter
-import com.example.lifesimulator.model.Genre
 import com.example.lifesimulator.model.Personne
 import com.example.lifesimulator.view_model.ViewModelPagePrincipale
 

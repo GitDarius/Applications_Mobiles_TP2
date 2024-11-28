@@ -1,17 +1,18 @@
-package com.example.lifesimulator.model
+package com.example.lifesimulator.view
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesimulator.R
+import com.example.lifesimulator.model.Genre
 import com.example.lifesimulator.model.Outils.obtenirImage
 import com.example.lifesimulator.model.Outils.personne
-import com.example.lifesimulator.view.FragmentAfficPersonnes
+import com.example.lifesimulator.model.Personne
 
-class AfficPersonneAdapter (
+class BureauAdapter (
     private val ctx: Context,
-    private val activity: FragmentAfficPersonnes,
+    private val activity: FragmentBureau,
     private var data: List<Personne>
 ) : RecyclerView.Adapter<ItemPersonneHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemPersonneHolder {
@@ -20,16 +21,16 @@ class AfficPersonneAdapter (
     }
     override fun onBindViewHolder(holder: ItemPersonneHolder, position: Int) {
         val personne = data[position]
+        holder.itemView.setOnClickListener {
+            activity.partirBureau(personne)
+        }
+        holder.image.setImageDrawable(obtenirImage(ctx, personne.image))
+        holder.nom.text = personne.nom
         if(personne.genre == Genre.F){
             holder.fond.setImageResource(R.drawable.fond_rose)
         }else{
             holder.fond.setImageResource(R.drawable.fond_bleu)
         }
-        holder.itemView.setOnClickListener {
-            activity.allerBureau(personne)
-        }
-        holder.image.setImageDrawable(obtenirImage(ctx, personne.image))
-        holder.nom.text = personne.nom
         if(personne.conjointId == null){
             holder.coeur.setImageResource(R.drawable.ic_coeur_brise)
             holder.nomConjoint.text = ""

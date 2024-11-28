@@ -1,4 +1,4 @@
-package com.example.lifesimulator.model
+package com.example.lifesimulator.view
 
 import android.view.View
 import android.widget.ImageView
