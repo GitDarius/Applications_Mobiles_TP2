@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Life simulator</string>
+    <string name="age_plural">%1$d years</string>
+    <string name="age_singular">%1$d year</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
