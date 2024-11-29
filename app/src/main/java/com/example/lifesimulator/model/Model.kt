@@ -11,6 +11,6 @@ object Model {
 
     val listePersonnes = listeToutesPersonnes.filter { it.enVie }.toMutableList()
 
-    var anneActuelle = 0
+    var anneeActuelle = 0
 
 }

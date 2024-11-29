@@ -64,4 +64,13 @@ object Outils {
         return noms.random()
     }
 
+    fun passerAnnee(){
+        Model.anneeActuelle += 1
+        for(personne in Model.listeToutesPersonnes){
+            if(personne.enVie){
+                personne.age += 1
+            }
+        }
+    }
+
 }
