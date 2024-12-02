@@ -44,7 +44,7 @@ class FragmentBureau : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerView.adapter = adapter
         viewModel.adapteurBureau = adapter
-
+        viewModelInfos.adapterBureau = adapter
         //Boutons
         boutonMarier = view.findViewById(R.id.bureauBoutonMarier)
         boutonMarier.setOnClickListener {

@@ -1,5 +1,6 @@
 package com.example.lifesimulator.model
 
+import android.graphics.drawable.Drawable
 import android.util.Log
 import com.example.lifesimulator.R
 import com.example.lifesimulator.model.Outils.exp
@@ -50,6 +51,7 @@ data class Personne(
             enfants = mutableListOf(),
             pereId = this.id,
             famille = this.famille
+
         )
         enfants.add(bebe.id)
         Model.listePersonnes.add(bebe)

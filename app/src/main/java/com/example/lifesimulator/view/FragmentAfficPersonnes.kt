@@ -50,6 +50,7 @@ class FragmentAfficPersonnes : Fragment() {
             adapter = AfficPersonneAdapter(requireContext(), this, listePersonnes)
             recyclerView.adapter = adapter
             viewModel.adapterListePersonnes = adapter
+            viewModelInfos.adapteurAfficPersonne = adapter
         }
     }
 

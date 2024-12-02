@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.text.TextUtils.TruncateAt
+import android.util.Log
 import android.view.Display.Mode
 import androidx.core.content.ContextCompat
 import kotlin.math.pow
@@ -19,6 +20,7 @@ object Outils {
                 Drawable.createFromStream(it, uri.toString())
             }
         } else {
+            Log.i("TAG", "Image peut-être pas supportée: $image")
             val resourceId = context.resources.getIdentifier(image, "drawable", context.packageName)
             ContextCompat.getDrawable(context, resourceId)
         }

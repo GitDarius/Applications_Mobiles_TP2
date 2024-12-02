@@ -63,12 +63,23 @@ class FragmentInfosPersonne : Fragment() {
         boutonSauvegarder.setOnClickListener { viewModel.sauvegarder(saisieNom.text.toString()) }
         boutonPartir.setOnClickListener { viewModel.partir() }
         imagePartir.setOnClickListener { viewModel.partir() }
-
+        imageAleatoire.setOnClickListener {
+            saisieNom.setText(viewModel.avoirNomAleatoire())
+            viewModel.avoirImageAleatoire { drawable ->
+                if (drawable != null) {
+                    // Use the Drawable, for example, set it to an ImageView
+                    imageView.setImageDrawable(drawable)
+                } else {
+                    // Handle the case where the drawable could not be loaded (e.g., set a placeholder)
+                    imageView.setImageResource(R.drawable.test)
+                }
+            }
+        }
         view.visibility = View.GONE
 
     }
 
-    fun miseAJour(){
+    private fun miseAJour(){
         if(viewModel.personneOriginale.value != null){
             val personne = viewModel.personneOriginale.value!!
             saisieNom.setText(personne.nom)
