@@ -2,6 +2,7 @@ package com.example.lifesimulator.view
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesimulator.R
@@ -21,9 +22,16 @@ class BureauAdapter (
     }
     override fun onBindViewHolder(holder: ItemPersonneHolder, position: Int) {
         val personne = data[position]
+
         holder.itemView.setOnClickListener {
             activity.partirBureau(personne)
         }
+
+        holder.itemView.setOnLongClickListener {
+            activity.afficherInfos(personne)
+            true
+        }
+
         holder.image.setImageDrawable(obtenirImage(ctx, personne.image))
         holder.nom.text = personne.nom
         if(personne.genre == Genre.F){
@@ -40,6 +48,15 @@ class BureauAdapter (
         }
         val ressourceString = if (personne.age == 1) R.string.age_singular else R.string.age_plural
         holder.age.text = activity.getString(ressourceString, personne.age)
+
+        if(personne.enVie){
+            holder.tombe.visibility = View.INVISIBLE
+            holder.fondTombe.visibility = View.INVISIBLE
+        }else{
+            holder.tombe.visibility = View.VISIBLE
+            holder.fondTombe.visibility = View.VISIBLE
+        }
+
     }
     override fun getItemCount(): Int = data.size
 

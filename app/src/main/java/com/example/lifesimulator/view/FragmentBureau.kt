@@ -6,16 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.activity.viewModels
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesimulator.R
 import com.example.lifesimulator.model.Personne
+import com.example.lifesimulator.view_model.ViewModelInfos
 import com.example.lifesimulator.view_model.ViewModelPagePrincipale
 
 class FragmentBureau : Fragment() {
 
     private val viewModel : ViewModelPagePrincipale by activityViewModels()
+    private val viewModelInfos : ViewModelInfos by activityViewModels()
+
     private val listePersonnes get() = viewModel.listePersonnesBureau.value!!
 
     private lateinit var recyclerView: RecyclerView
@@ -56,6 +60,10 @@ class FragmentBureau : Fragment() {
 
     fun partirBureau(personne: Personne){
         viewModel.partirBureau(personne)
+    }
+
+    fun afficherInfos(personne: Personne){
+        viewModelInfos.changerPersonne(personne)
     }
 
 }

@@ -163,4 +163,16 @@ class ViewModelPagePrincipale: ViewModel() {
 
     }
 
+    fun passerAnnee(){
+        Model.anneeActuelle += 1
+        for(personne in Model.listeToutesPersonnes){
+            if(personne.enVie){
+                personne.passerAnnee()
+            }
+        }
+        adapteurBureau!!.notifyItemRangeChanged(0, listePersonnesBureau.value!!.size)
+        adapterListePersonnes!!.notifyItemRangeChanged(0, listePersonnes.value!!.size)
+    }
+
+
 }

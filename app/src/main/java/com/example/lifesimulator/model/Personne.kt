@@ -2,6 +2,7 @@ package com.example.lifesimulator.model
 
 import android.util.Log
 import com.example.lifesimulator.R
+import com.example.lifesimulator.model.Outils.exp
 import com.example.lifesimulator.model.Outils.nouveauNom
 import com.example.lifesimulator.model.Outils.personne
 import kotlin.random.Random
@@ -53,6 +54,14 @@ data class Personne(
         enfants.add(bebe.id)
         Model.listePersonnes.add(bebe)
         Model.listeToutesPersonnes.add(bebe)
+    }
+
+    fun passerAnnee(){
+        //Théoriquement, le max serait 190 ans, la moyenne est d'environ 90 ans
+        if(exp(age, 4.0) > Random.nextInt(0, exp(101, 4.55))){
+            enVie = false
+        }
+        age += 1
     }
 
 }

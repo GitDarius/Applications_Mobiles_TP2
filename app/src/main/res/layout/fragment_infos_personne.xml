@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".view.FragmentInfosPersonne">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Background ImageView -->
+
+        <!-- Image View for Person Image -->
+        <ImageView
+            android:id="@+id/infosFond"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginEnd="-10dp"
+            android:layout_marginBottom="-10dp"
+            android:src="@drawable/fond_gris"
+            app:layout_constraintBottom_toBottomOf="@+id/infosBoutonSauvegarder"
+            app:layout_constraintEnd_toEndOf="@+id/infosBoutonSauvegarder"
+            app:layout_constraintStart_toStartOf="@+id/infosImage"
+            app:layout_constraintTop_toTopOf="@+id/infosImage" />
+
+        <ImageView
+            android:id="@+id/infosImage"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <!-- LinearLayout for Info Elements -->
+        <LinearLayout
+            android:id="@+id/infoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@+id/infosImage"
+            app:layout_constraintTop_toTopOf="@+id/infosImage">
+
+            <!-- EditText for Name (Modifiable) -->
+            <EditText
+                android:id="@+id/infosNom"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:paddingBottom="2dp"
+                android:text="Nathaniel"
+                android:maxLength="10"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <!-- Age TextView -->
+            <TextView
+                android:id="@+id/infosAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Age: 18"
+                android:textColor="@color/white" />
+
+            <!-- Family TextView -->
+            <TextView
+                android:id="@+id/infosFamille"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Family: Doe"
+                android:textColor="@color/white" />
+
+            <!-- Genre TextView -->
+            <TextView
+                android:id="@+id/infosGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Genre: Male"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <!-- LinearLayout for Buttons -->
+
+        <Button
+            android:id="@+id/infosBoutonSauvegarder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Save"
+            app:layout_constraintStart_toEndOf="@+id/infosBoutonPartir"
+            app:layout_constraintTop_toTopOf="@+id/infosBoutonPartir" />
+
+        <Button
+            android:id="@+id/infosBoutonPartir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Cancel"
+            app:layout_constraintStart_toEndOf="@+id/infosImage"
+            app:layout_constraintTop_toBottomOf="@+id/infosImage" />
+
+        <ImageView
+            android:id="@+id/infosImageAleatoire"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/de"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/infosImage"
+            app:layout_constraintTop_toBottomOf="@+id/infosImage" />
+
+        <ImageView
+            android:id="@+id/infosImagePartir"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginEnd="-10dp"
+            android:src="@drawable/ic_x"
+            app:layout_constraintEnd_toEndOf="@+id/infosFond"
+            app:layout_constraintTop_toTopOf="@+id/infosFond" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

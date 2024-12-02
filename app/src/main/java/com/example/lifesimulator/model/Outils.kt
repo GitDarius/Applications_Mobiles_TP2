@@ -6,6 +6,7 @@ import android.net.Uri
 import android.text.TextUtils.TruncateAt
 import android.view.Display.Mode
 import androidx.core.content.ContextCompat
+import kotlin.math.pow
 
 
 object Outils {
@@ -64,13 +65,9 @@ object Outils {
         return noms.random()
     }
 
-    fun passerAnnee(){
-        Model.anneeActuelle += 1
-        for(personne in Model.listeToutesPersonnes){
-            if(personne.enVie){
-                personne.age += 1
-            }
-        }
+
+    fun exp(nombre: Int, exposant: Double): Int{
+        return nombre.toDouble().pow(exposant).toInt()
     }
 
 }

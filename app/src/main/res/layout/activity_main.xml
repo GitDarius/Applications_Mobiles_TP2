@@ -40,5 +40,16 @@
         app:layout_constraintTop_toBottomOf="@+id/fragmentAfficPersonnes"
         tools:layout="@layout/fragment_bureau" />
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentInfos"
+        android:name="com.example.lifesimulator.view.FragmentInfosPersonne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:layout="@layout/fragment_infos_personne" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

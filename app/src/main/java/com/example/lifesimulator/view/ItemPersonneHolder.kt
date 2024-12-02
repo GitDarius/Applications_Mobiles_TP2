@@ -15,4 +15,6 @@ class ItemPersonneHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val coeur: ImageView = itemView.findViewById(R.id.itemPersonneCoeur)
     val nomConjoint: TextView = itemView.findViewById(R.id.itemPersonneNomConjoint)
     val age: TextView = itemView.findViewById(R.id.itemPersonneAge)
+    val fondTombe: ImageView = itemView.findViewById(R.id.itemPersonneFondTombe)
+    val tombe: ImageView = itemView.findViewById(R.id.itemPersonneTombe)
 }

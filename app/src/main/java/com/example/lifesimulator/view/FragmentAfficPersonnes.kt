@@ -10,12 +10,16 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesimulator.R
 import com.example.lifesimulator.model.Personne
+import com.example.lifesimulator.view_model.ViewModelInfos
 import com.example.lifesimulator.view_model.ViewModelPagePrincipale
 
 class FragmentAfficPersonnes : Fragment() {
 
     private lateinit var view: View
+
     private val viewModel : ViewModelPagePrincipale by activityViewModels()
+    private val viewModelInfos : ViewModelInfos by activityViewModels()
+
     private val listePersonnes get() = viewModel.listePersonnes.value!!
 
     private lateinit var recyclerView: RecyclerView
@@ -53,5 +57,8 @@ class FragmentAfficPersonnes : Fragment() {
         viewModel.ajouterBureau(personne)
     }
 
+    fun afficherInfos(personne: Personne){
+        viewModelInfos.changerPersonne(personne)
+    }
 
 }
