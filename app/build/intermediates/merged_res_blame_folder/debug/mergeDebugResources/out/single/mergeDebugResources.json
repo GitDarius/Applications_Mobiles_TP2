@@ -1,0 +1,186 @@
+[
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_fragment_bureau.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_bureau.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_ic_coeur.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\ic_coeur.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_de.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\de.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_ic_coeur_brise.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\ic_coeur_brise.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_ic_arbre_genealogique.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\ic_arbre_genealogique.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_activite_arbre_genealogique.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\activite_arbre_genealogique.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_fragment_connexion.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_connexion.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\menu_activite_menu_principal.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\menu\\activite_menu_principal.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_fragment_afficher_arbre.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_afficher_arbre.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_id_ligne_droite.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\id_ligne_droite.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_fond_rose.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\fond_rose.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_ic_connecter.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\ic_connecter.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_test.png.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\test.png"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_toolbar.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\toolbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_item_personne.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\item_personne.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_ic_temps.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\ic_temps.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_ic_ajout_personne.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\ic_ajout_personne.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_fragment_affic_personnes.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_affic_personnes.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_spinner_item.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\spinner_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_fragment_infos_personne.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_infos_personne.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\xml_file_paths.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\xml\\file_paths.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_fond_gris.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\fond_gris.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_arbre_feuille.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\arbre_feuille.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_fragment_choisir_famille.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_choisir_famille.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_fond_bleu.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\fond_bleu.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_ic_x.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\ic_x.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\layout_fragment_ajouter_personne.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_ajouter_personne.xml"
+    },
+    {
+        "merged": "com.example.lifesimulator.app-debug-43:/layout_activity_main.xml.flat",
+        "source": "com.example.lifesimulator.app-main-45:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-debug-43:\\drawable_tombe.xml.flat",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\drawable\\tombe.xml"
+    }
+]

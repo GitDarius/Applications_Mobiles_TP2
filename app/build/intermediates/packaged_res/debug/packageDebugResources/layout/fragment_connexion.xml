@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".view.FragmentConnexion">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/connexionFond"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="-20dp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginEnd="-20dp"
+            android:layout_marginBottom="-10dp"
+            android:src="@drawable/fond_gris"
+            app:layout_constraintBottom_toBottomOf="@+id/connexionBoutonCreerCompte"
+            app:layout_constraintEnd_toEndOf="@+id/connexionBoutonConnexion"
+            app:layout_constraintStart_toStartOf="@+id/connexionBoutonCreerCompte"
+            app:layout_constraintTop_toTopOf="@+id/connexionMessage" />
+
+        <EditText
+            android:id="@+id/connexionNom"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/connexionMotDePasse"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/connexionMessage" />
+
+        <EditText
+            android:id="@+id/connexionMotDePasse"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/connexionBoutonCreerCompte"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:text="Sign Up"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/connexionBoutonConnexion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/connexionMotDePasse" />
+
+        <Button
+            android:id="@+id/connexionBoutonConnexion"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:text="Login"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/connexionBoutonCreerCompte"
+            app:layout_constraintTop_toBottomOf="@+id/connexionMotDePasse" />
+
+        <ImageView
+            android:id="@+id/connexionImagePartir"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_x"
+            app:layout_constraintEnd_toEndOf="@+id/connexionFond"
+            app:layout_constraintTop_toTopOf="@+id/connexionFond" />
+
+        <TextView
+            android:id="@+id/connexionMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="TEst"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/connexionImagePartir"
+            app:layout_constraintStart_toStartOf="@+id/connexionFond"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

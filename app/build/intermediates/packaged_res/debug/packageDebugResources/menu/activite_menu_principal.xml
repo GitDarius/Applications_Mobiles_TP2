@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/passerAnnee"
+        android:icon="@drawable/ic_temps"
+        android:title="Pass a year"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/connexion"
+        android:icon="@drawable/ic_connecter"
+        android:title="Login"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/versArbre"
+        android:icon="@drawable/ic_arbre_genealogique"
+        android:title="Open genealogical tree page"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/ajouterPersonne"
+        android:icon="@drawable/ic_ajout_personne"
+        android:title="Add a new person"
+        app:showAsAction="always"/>
+
+</menu>

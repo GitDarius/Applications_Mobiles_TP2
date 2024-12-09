@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="170dp"
+    android:layout_height="100dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/itemPersonneFondGris"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="-15dp"
+        android:layout_marginBottom="-10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemPersonneImage"
+        app:layout_constraintEnd_toEndOf="@+id/itemPersonneContainer"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itemPersonneImage"
+        app:layout_constraintVertical_bias="0.0"
+        app:shapeAppearanceOverlay="@style/imageCoinsArrondis"
+        app:srcCompat="@drawable/fond_gris" />
+
+
+    <ImageView
+        android:id="@+id/itemPersonneImage"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/itemPersonneCoeur"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemPersonneImage"
+        app:layout_constraintStart_toEndOf="@+id/itemPersonneImage"
+        app:srcCompat="@drawable/ic_coeur" />
+
+    <TextView
+        android:id="@+id/itemPersonneNomConjoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nathaniel"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemPersonneCoeur"
+        app:layout_constraintStart_toEndOf="@+id/itemPersonneCoeur"
+        app:layout_constraintTop_toTopOf="@+id/itemPersonneCoeur" />
+
+    <LinearLayout
+        android:id="@+id/itemPersonneContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/itemPersonneImage"
+        app:layout_constraintTop_toTopOf="@+id/itemPersonneImage">
+
+        <TextView
+            android:id="@+id/itemPersonneNom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nathaniel"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/itemPersonneAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="20 ans"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/itemPersonneFondTombe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/itemPersonneImage"
+        app:layout_constraintEnd_toEndOf="@+id/itemPersonneContainer"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itemPersonneImage"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/fond_gris" />
+
+    <ImageView
+        android:id="@+id/itemPersonneTombe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tombe" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

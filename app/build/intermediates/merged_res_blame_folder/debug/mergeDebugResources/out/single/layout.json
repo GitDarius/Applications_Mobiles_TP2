@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\activite_arbre_genealogique.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\activite_arbre_genealogique.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\fragment_afficher_arbre.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_afficher_arbre.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\fragment_choisir_famille.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_choisir_famille.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\fragment_bureau.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_bureau.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\fragment_ajouter_personne.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_ajouter_personne.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\fragment_affic_personnes.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_affic_personnes.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\item_personne.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\item_personne.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\fragment_connexion.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_connexion.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\fragment_infos_personne.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\fragment_infos_personne.xml"
+    },
+    {
+        "merged": "com.example.lifesimulator.app-mergeDebugResources-42:/layout/activity_main.xml",
+        "source": "com.example.lifesimulator.app-main-45:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\toolbar.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\toolbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\spinner_item.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\spinner_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-mergeDebugResources-42:\\layout\\arbre_feuille.xml",
+        "source": "C:\\Users\\dariu\\.gradle\\daemon\\8.7\\com.example.lifesimulator.app-main-45:\\layout\\arbre_feuille.xml"
+    }
+]
