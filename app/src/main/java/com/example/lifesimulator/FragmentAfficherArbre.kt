@@ -14,6 +14,7 @@ import com.example.lifesimulator.model.Outils.obtenirImage
 import com.example.lifesimulator.model.Outils.personne
 import com.example.lifesimulator.model.Personne
 import com.example.lifesimulator.view_model.ViewModelAffArbre
+import com.google.android.material.snackbar.Snackbar
 
 class FragmentAfficherArbre : Fragment() {
 
@@ -33,6 +34,12 @@ class FragmentAfficherArbre : Fragment() {
             if(nouvelleFamille.isNotEmpty()){
                 Log.i("TAG", "Famille changée, lancer generation!")
                 commencerGenerationArbre()
+            }
+        }
+        viewModel.snackbarMessage.observe(viewLifecycleOwner) { message ->
+            message?.let {
+                Snackbar.make(requireView(), it, Snackbar.LENGTH_SHORT).show()
+                viewModel.showSnackbar(null)
             }
         }
     }

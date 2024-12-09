@@ -35,7 +35,6 @@ data class Personne(
         }else{
             Log.i("TAG", "Conjoint pas trouvé")
         }
-
     }
 
     fun procreer(){

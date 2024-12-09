@@ -14,6 +14,7 @@ import android.widget.Spinner
 import androidx.fragment.app.activityViewModels
 import com.example.lifesimulator.view_model.ViewModelAjoutPersonne
 import com.example.lifesimulator.view_model.ViewModelPagePrincipale
+import com.google.android.material.snackbar.Snackbar
 import kotlin.random.Random
 
 class FragmentAjouterPersonne : Fragment() {
@@ -69,9 +70,9 @@ class FragmentAjouterPersonne : Fragment() {
         }
         boutonSauvegarder.setOnClickListener {
             if(!viewModel.nomValide(nomView.text.toString())){
-                Log.i("Snack", "Nom invalide")
+                Snackbar.make(requireView(), "Nom invalide", Snackbar.LENGTH_SHORT).show()
             }else if(!viewModel.ageValide(ageView.text.toString())){
-                Log.i("Snack", "Age invalide")
+                Snackbar.make(requireView(), "Age invalide", Snackbar.LENGTH_SHORT).show()
             }else{
                 viewModel.sauvegarder(nomView.text.toString(), ageView.text.toString(), genreSpinner.selectedItem.toString(), R.drawable.test.toString())
                 viewModelPagePrincipale.adapterListePersonnes!!.notifyItemInserted(viewModelPagePrincipale.adapterListePersonnes!!.itemCount-1)

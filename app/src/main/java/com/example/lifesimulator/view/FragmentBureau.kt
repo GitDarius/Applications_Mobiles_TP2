@@ -14,6 +14,7 @@ import com.example.lifesimulator.R
 import com.example.lifesimulator.model.Personne
 import com.example.lifesimulator.view_model.ViewModelInfos
 import com.example.lifesimulator.view_model.ViewModelPagePrincipale
+import com.google.android.material.snackbar.Snackbar
 
 class FragmentBureau : Fragment() {
 
@@ -54,6 +55,13 @@ class FragmentBureau : Fragment() {
         boutonProcreer = view.findViewById(R.id.bureauBoutonBebe)
         boutonProcreer.setOnClickListener {
             viewModel.procreer()
+        }
+
+        viewModel.snackbarMessage.observe(viewLifecycleOwner) { message ->
+            message?.let {
+                Snackbar.make(requireView(), it, Snackbar.LENGTH_SHORT).show()
+                viewModel.showSnackbar(null)
+            }
         }
 
     }

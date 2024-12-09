@@ -15,6 +15,7 @@ import com.example.lifesimulator.R
 import com.example.lifesimulator.model.Model
 import com.example.lifesimulator.view_model.ViewModelConnexion
 import com.example.lifesimulator.view_model.ViewModelPagePrincipale
+import com.google.android.material.snackbar.Snackbar
 
 class FragmentConnexion : Fragment() {
 
@@ -57,11 +58,11 @@ class FragmentConnexion : Fragment() {
             val motDePasse = motDePasseView.text.toString()
 
             if(!viewModel.nomValide(nom)){
-                Log.i("Snack", "Nom invalide")
+                Snackbar.make(requireView(), "Nom invalide", Snackbar.LENGTH_SHORT).show()
             }else if(!viewModel.motDePasseValide(motDePasse)){
-                Log.i("Snack", "Mot de passe invalide")
+                Snackbar.make(requireView(), "Mot de passe invalide", Snackbar.LENGTH_SHORT).show()
             }else if(!viewModel.utilisateurExistant(nom, motDePasse)){
-                Log.i("Snack", "Utilisateur inexistant")
+                Snackbar.make(requireView(), "Utilisateur inexistant", Snackbar.LENGTH_SHORT).show()
             }else{
                 viewModel.connecter(nom)
                 message.text = "Connected as ${Model.utilisateurActuel}"
@@ -72,11 +73,11 @@ class FragmentConnexion : Fragment() {
             val nom = nomView.text.toString()
             val motDePasse = motDePasseView.text.toString()
             if(!viewModel.nomValide(nom)){
-                Log.i("Snack", "Nom invalide")
+                Snackbar.make(requireView(), "Nom invalide", Snackbar.LENGTH_SHORT).show()
             }else if(!viewModel.motDePasseValide(motDePasse)){
-                Log.i("Snack", "Mot de passe invalide")
+                Snackbar.make(requireView(), "Mot de passe invalide", Snackbar.LENGTH_SHORT).show()
             }else if(viewModel.utilisateurExistant(nom, motDePasse)){
-                Log.i("Snack", "Utilisateur deja existant")
+                Snackbar.make(requireView(), "Utilisateur deja existant", Snackbar.LENGTH_SHORT).show()
             }else{
                 viewModel.creerUtilisateur(nom, motDePasse)
                 viewModel.connecter(nom)

@@ -97,8 +97,8 @@ object Outils {
             outputStream.flush()
             outputStream.close()
 
-            // Get the Uri for the file
-            FileProvider.getUriForFile(context, "com.example.applications_mobiles_tp1.fileprovider", file)
+            // Get the Uri for the file using the updated FileProvider
+            FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", file)
         } catch (e: Exception) {
             e.printStackTrace()
             null

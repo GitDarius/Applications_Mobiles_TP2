@@ -1,6 +1,7 @@
 package com.example.lifesimulator.view_model
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.lifesimulator.view.AfficPersonneAdapter
@@ -10,6 +11,7 @@ import com.example.lifesimulator.model.Genre
 import com.example.lifesimulator.model.Model
 import com.example.lifesimulator.model.Outils.personne
 import com.example.lifesimulator.model.Personne
+import com.google.android.material.snackbar.Snackbar
 
 class ViewModelPagePrincipale: ViewModel() {
 
@@ -20,15 +22,24 @@ class ViewModelPagePrincipale: ViewModel() {
     var adapteurBureau: BureauAdapter? = null
     var adapterListePersonnes: AfficPersonneAdapter? = null
 
+    private val _snackbarMessage = MutableLiveData<String>()
+    val snackbarMessage: LiveData<String> get() = _snackbarMessage
+
+    fun showSnackbar(message: String?) {
+        if(message != null){
+            _snackbarMessage.value = message!!
+        }
+    }
+
     fun ajouterBureau(personne: Personne){
         if(listePersonnesBureau.value!!.size >= Constantes.LIMITE__PERSONNES_BUREAU){
-            Log.i("Snack", "Bureau plein")
+            showSnackbar("Bureau Plein")
         }else{
             //On la rajoute au bureau
             if(adapteurBureau != null){
                 listePersonnesBureau.value!!.add(personne)
                 adapteurBureau!!.notifyItemInserted(listePersonnesBureau.value!!.size-1)
-                Log.i("Snack", "${personne.nom} ajoutée au bureau")
+                showSnackbar("${personne.nom} ajoutée au bureau")
             }else{
                 Log.i("Tag", "Adapteur bureau pas reconnu")
             }
@@ -55,7 +66,7 @@ class ViewModelPagePrincipale: ViewModel() {
 
         //Il faut 2 personnes
         if(listePersonnesBureau.value!!.size != 2){
-            Log.i("Snack", "Besoin de 2 personnes pour marier")
+            showSnackbar("Besoin de 2 personnes pour marier")
             return
         }
 
@@ -66,47 +77,47 @@ class ViewModelPagePrincipale: ViewModel() {
         when {
             personne1.conjointId != null && personne2.conjointId != null -> {
                 if (personne1.conjointId == personne2.id) {
-                    Log.i("Snack", "Les 2 forment déjà un heureux couple")
+                    showSnackbar("Les 2 forment déjà un heureux couple")
                 } else {
-                    Log.i("Snack", "Les 2 sont déjà mariés à d'autres personnes")
+                    showSnackbar("Les 2 sont déjà mariés à d'autres personnes")
                 }
                 return
             }
             personne1.conjointId != null -> {
-                Log.i("Snack", "${personne1.nom} est déjà marié à ${personne(personne1.conjointId!!)!!.nom}")
+                showSnackbar("${personne1.nom} est déjà marié à ${personne(personne1.conjointId!!)!!.nom}")
                 return
             }
             personne2.conjointId != null -> {
-                Log.i("Snack", "${personne2.nom} est déjà marié à ${personne(personne2.conjointId!!)!!.nom}")
+                showSnackbar("${personne2.nom} est déjà marié à ${personne(personne2.conjointId!!)!!.nom}")
                 return
             }
         }
 
         //Pour éviter qu'un fils se marie avec sa tante ou sa soeur
         if(personne1.famille != null && personne1.famille == personne2.famille){
-            Log.i("Snack", "Les 2 doivent ne peuvent pas être de la même famille")
+            showSnackbar("Les 2 doivent ne peuvent pas être de la même famille")
             return
         }
 
         //Au moins 18 ans pour se marier
         when{
             personne1.age < 15 && personne2.age < 15 -> {
-                Log.i("Snack", "${personne1.nom} et ${personne2.nom} sont trop jeunes")
+                showSnackbar("${personne1.nom} et ${personne2.nom} sont trop jeunes")
                 return
             }
             personne1.age < 15 -> {
-                Log.i("Snack", "${personne1.nom} est trop jeune")
+                showSnackbar("${personne1.nom} est trop jeune")
                 return
             }
             personne2.age < 15 -> {
-                Log.i("Snack", "${personne1.nom} est trop jeune")
+                showSnackbar("${personne1.nom} est trop jeune")
                 return
             }
         }
 
         //S'ils ont le même genre, ils ne peuvent se marier
         if(personne1.genre == personne2.genre){
-            Log.i("Snack", "Autoriser celle liaison serait un danger pour la survie de la population (selon Kant)")
+            showSnackbar("Autoriser celle liaison serait un danger pour la survie de la population (selon Kant)")
         }
 
         val homme = if (personne1.genre == Genre.F) personne2 else personne1
@@ -114,7 +125,7 @@ class ViewModelPagePrincipale: ViewModel() {
 
         homme.marier(femme)
 
-        Log.i("Snack", "Le mariage fût un succès!")
+        showSnackbar("Le mariage fût un succès!")
         adapteurBureau!!.notifyItemRangeChanged(0, 2)
     }
 
@@ -123,7 +134,7 @@ class ViewModelPagePrincipale: ViewModel() {
 
         //Il faut 2 personnes
         if(listePersonnesBureau.value!!.size != 2){
-            Log.i("Snack", "Besoin de 2 personnes pour marier")
+            showSnackbar("Besoin de 2 personnes pour marier")
             return
         }
 
@@ -133,13 +144,13 @@ class ViewModelPagePrincipale: ViewModel() {
 
         //Il faut qu'elles soient mariées.
         if(personne1.conjointId != personne2.id){
-            Log.i("Snack", "${personne1.nom} et ${personne2.nom} ne sont pas en couple")
+            showSnackbar("${personne1.nom} et ${personne2.nom} ne sont pas en couple")
             return
         }
 
         //Il faut une femme et un homme
         if(personne1.genre == personne2.genre){
-            Log.i("Snack", "Naturellement impossible vu le genre")
+            showSnackbar("Naturellement impossible vu le genre")
             return
         }
 
@@ -149,11 +160,11 @@ class ViewModelPagePrincipale: ViewModel() {
         //Je vérifie l'âge
         when{
             mere.age < 18 -> {
-                Log.i("Snack", "La mère est trop jeune")
+                showSnackbar("La mère est trop jeune")
                 return
             }
             mere.age > 55 -> {
-                Log.i("Snack", "La mère est trop vielle")
+                showSnackbar("La mère est trop vielle")
                 return
             }
         }

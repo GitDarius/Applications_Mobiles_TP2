@@ -20,6 +20,7 @@ import com.example.lifesimulator.model.Personne
 import com.example.lifesimulator.view.AfficPersonneAdapter
 import com.example.lifesimulator.view.BureauAdapter
 import com.example.lifesimulator.view.FragmentInfosPersonne
+import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,7 +42,7 @@ class ViewModelInfos : ViewModel() {
     fun sauvegarder(nom: String){
         val personne = personneOriginale.value!!
         if(nom.isEmpty()){
-            Log.i("Snack", "Nom peut pas être vide")
+            Snackbar.make(fragmentInfos!!.requireView(), "Nom peut pas être vide", Snackbar.LENGTH_SHORT).show()
         }else{
             personne.nom = nom
         }
