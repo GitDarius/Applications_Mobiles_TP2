@@ -14,6 +14,7 @@ import com.bumptech.glide.request.transition.Transition
 import com.example.lifesimulator.model.API.ApiReponse
 import com.example.lifesimulator.model.API.RetrofitInstance
 import com.example.lifesimulator.model.Genre
+import com.example.lifesimulator.model.Outils
 import com.example.lifesimulator.model.Outils.nouveauNom
 import com.example.lifesimulator.model.Personne
 import com.example.lifesimulator.view.AfficPersonneAdapter
@@ -45,14 +46,8 @@ class ViewModelInfos : ViewModel() {
             personne.nom = nom
         }
         if(imageTemp != null){
-            val resources: Resources = getApplication<Application>().applicationContext.getResources()
-            Uri.parse(
-                ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + resources.getResourcePackageName(
-                    resId
-                ) + '/' + resources.getResourceTypeName(resId) + '/' + resources.getResourceEntryName(
-                    resId
-                )
-            )
+            val temp = Outils.drawableVersUri(imageTemp!!, fragmentInfos!!.requireContext())
+            personne.image = temp.toString()
         }
         partir()
     }

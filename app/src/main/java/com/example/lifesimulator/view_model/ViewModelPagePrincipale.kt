@@ -109,8 +109,8 @@ class ViewModelPagePrincipale: ViewModel() {
             Log.i("Snack", "Autoriser celle liaison serait un danger pour la survie de la population (selon Kant)")
         }
 
-        val homme = if (personne1.genre == Genre.F) personne1 else personne2
-        val femme = if (personne1.genre == Genre.M) personne1 else personne2
+        val homme = if (personne1.genre == Genre.F) personne2 else personne1
+        val femme = if (personne1.genre == Genre.M) personne2 else personne1
 
         homme.marier(femme)
 

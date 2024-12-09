@@ -1,12 +1,18 @@
 package com.example.lifesimulator.model
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.text.TextUtils.TruncateAt
 import android.util.Log
 import android.view.Display.Mode
 import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
+import java.io.File
+import java.io.FileOutputStream
 import kotlin.math.pow
 
 
@@ -30,17 +36,14 @@ object Outils {
         return Model.listeToutesPersonnes.find{it.id == id}
     }
 
-    fun creerId(): Int{
+    fun creerId(): Int {
+        val idExistants = Model.listeToutesPersonnes.map { it.id }.toSet()
         var i = 0
-        while(true){
-            for(personne in Model.listePersonnes){
-                if(personne.id == i){
-                    i++
-                    continue
-                }
-            }
-            return i
+        while (i in idExistants) {
+            i++
         }
+        Log.i("TAG", "Nouvel id est: $i")
+        return i
     }
 
     fun nouveauNom(genre: Genre): String{
@@ -71,5 +74,37 @@ object Outils {
     fun exp(nombre: Int, exposant: Double): Int{
         return nombre.toDouble().pow(exposant).toInt()
     }
+
+    fun drawableVersUri(drawable: Drawable, context: Context): Uri? {
+        return try {
+            // Convert the drawable to a bitmap
+            val bitmap = if (drawable is BitmapDrawable) {
+                drawable.bitmap
+            } else {
+                val bitmap = Bitmap.createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight, Bitmap.Config.ARGB_8888)
+                val canvas = Canvas(bitmap)
+                drawable.setBounds(0, 0, canvas.width, canvas.height)
+                drawable.draw(canvas)
+                bitmap
+            }
+
+            // Create a file with a unique name in the cache directory
+            val file = File(context.cacheDir, "drawable_image_${System.currentTimeMillis()}.png")
+
+            // Write the bitmap to the file
+            val outputStream = FileOutputStream(file)
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+            outputStream.flush()
+            outputStream.close()
+
+            // Get the Uri for the file
+            FileProvider.getUriForFile(context, "com.example.applications_mobiles_tp1.fileprovider", file)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
+    }
+
+
 
 }

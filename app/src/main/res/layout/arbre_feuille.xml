@@ -1,0 +1,106 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center|top"
+    android:paddingEnd="10dp">
+
+    <ImageView
+        android:id="@+id/feuilleFond"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="-10dp"
+        android:layout_marginBottom="-35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/feuilleContainerImages"
+        app:layout_constraintEnd_toEndOf="@+id/feuilleContainerImages"
+        app:layout_constraintStart_toStartOf="@+id/feuilleContainerImages"
+        app:layout_constraintTop_toTopOf="@+id/feuilleContainerImages"
+        app:srcCompat="@drawable/fond_gris" />
+
+    <LinearLayout
+        android:id="@+id/feuilleContainerImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/feuilleNomPere"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feuille_ligne_haut"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/feuilleImagePere"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/feuilleImageMere"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            tools:srcCompat="@tools:sample/avatars" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/feuilleNomMere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NomMere"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/feuilleNomPere"
+        app:layout_constraintEnd_toEndOf="@+id/feuilleContainerImages"
+        app:layout_constraintTop_toTopOf="@+id/feuilleNomPere" />
+
+    <TextView
+        android:id="@+id/feuilleNomPere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="nomPere"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/feuille_ligne_bas"
+        app:layout_constraintStart_toStartOf="@+id/feuilleContainerImages" />
+
+    <ImageView
+        android:id="@+id/feuille_ligne_haut"
+        android:layout_width="5dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/feuilleFond"
+        app:layout_constraintStart_toStartOf="@+id/feuilleFond"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/id_ligne_droite" />
+
+    <ImageView
+        android:id="@+id/feuille_ligne_bas"
+        android:layout_width="5dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/feuille_ligne_bas_horizontale"
+        app:layout_constraintEnd_toEndOf="@+id/feuilleFond"
+        app:layout_constraintStart_toStartOf="@+id/feuilleFond"
+        app:srcCompat="@drawable/id_ligne_droite" />
+
+    <ImageView
+        android:id="@+id/feuille_ligne_bas_horizontale"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/feuille_enfants"
+        app:layout_constraintEnd_toEndOf="@+id/feuille_enfants"
+        app:layout_constraintStart_toStartOf="@+id/feuille_enfants"
+        app:srcCompat="@drawable/id_ligne_droite" />
+
+    <LinearLayout
+        android:id="@+id/feuille_enfants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/feuilleFond"
+        app:layout_constraintStart_toStartOf="@+id/feuilleFond" />
+</androidx.constraintlayout.widget.ConstraintLayout>

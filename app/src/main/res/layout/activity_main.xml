@@ -51,5 +51,27 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         tools:layout="@layout/fragment_infos_personne" />
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentConnexion"
+        android:name="com.example.lifesimulator.view.FragmentConnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:layout="@layout/fragment_connexion" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentAjoutPersonne"
+        android:name="com.example.lifesimulator.FragmentAjouterPersonne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:layout="@layout/fragment_ajouter_personne" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
