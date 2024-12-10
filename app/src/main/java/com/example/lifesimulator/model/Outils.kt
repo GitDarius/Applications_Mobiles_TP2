@@ -11,6 +11,15 @@ import android.util.Log
 import android.view.Display.Mode
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.example.lifesimulator.model.firebase.PersonneEntite
+import com.example.lifesimulator.model.firebase.ajouterPersonne
+import com.example.lifesimulator.model.firebase.getPersonne
+import com.example.lifesimulator.model.firebase.getPersonnesCompte
+import com.example.lifesimulator.model.firebase.mettreAJourPersonne
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+import okhttp3.internal.wait
 import java.io.File
 import java.io.FileOutputStream
 import kotlin.math.pow
@@ -105,6 +114,65 @@ object Outils {
         }
     }
 
+    fun entite(personne: Personne):PersonneEntite{
+        return PersonneEntite(
+            idPersonne = personne.id,
+            compteLie = Model.utilisateurActuel!!,
+            enVie = personne.enVie,
+            nom = personne.nom,
+            image = personne.image,
+            conjointId = personne.conjointId,
+            genre = personne.genre,
+            age = personne.age,
+            pereId = personne.pereId,
+            famille = personne.famille
+        )
+    }
 
+    suspend fun sauvegarderPersonnes() {
+        val utilisateur = Model.utilisateurActuel
+        if (utilisateur == null) {
+            Log.e("Error", "Pas de membre connecté")
+            return
+        }
+        Log.i("Info", "Taille liste toutes personnes ${Model.listeToutesPersonnes.size}")
+        coroutineScope {
+            Model.listeToutesPersonnes.map { personne ->
+                async {
+                    val personneEntite = entite(personne)
+                    try {
+                        //Je vérifie si la personne existe deja dans la bd
+                        val existingPerson = getPersonne(personne.id, utilisateur)
+                        if (existingPerson == null) {
+                            ajouterPersonne(personneEntite)
+                        } else {
+                            mettreAJourPersonne(personneEntite)
+                        }
+                    } catch (e: Exception) {
+                        Log.e("Error", "Erreur en sauvegardant ${personne.nom}: ${e.message}")
+                    }
+                }
+            }.awaitAll()
+        }
+
+        Log.i("Info", "Toutes les personnes sauvegardées avec succès.")
+    }
+
+    suspend fun chargerPersonnesCompte(){
+        Log.i("Info", "METHODE APPELLÉE NON!")
+        val utilisateur = Model.utilisateurActuel
+        if (utilisateur == null) {
+            Log.e("Error", "Pas de membre connecté")
+            return
+        }
+
+        coroutineScope {
+            val listePersonnes = getPersonnesCompte(utilisateur)
+            Log.i("TAG", "${listePersonnes.size}")
+            Model.listeToutesPersonnes = ArrayList(listePersonnes)
+            Model.listePersonnes = ArrayList(listePersonnes)
+        }
+
+    }
 
 }

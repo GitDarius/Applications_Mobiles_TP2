@@ -11,15 +11,20 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import com.example.lifesimulator.R
 import com.example.lifesimulator.model.Model
 import com.example.lifesimulator.view_model.ViewModelConnexion
+import com.example.lifesimulator.view_model.ViewModelInfos
 import com.example.lifesimulator.view_model.ViewModelPagePrincipale
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 class FragmentConnexion : Fragment() {
 
     private val viewModel : ViewModelConnexion by activityViewModels()
+    private val viewModelPagePrincipale: ViewModelPagePrincipale by activityViewModels()
 
     private lateinit var nomView: EditText
     private lateinit var motDePasseView: EditText
@@ -40,6 +45,7 @@ class FragmentConnexion : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.fragmentConnexion = this
+        viewModel.viewModelInfos = viewModelPagePrincipale
         viewModel.partir()
         nomView = view.findViewById(R.id.connexionNom)
         motDePasseView = view.findViewById(R.id.connexionMotDePasse)
@@ -57,31 +63,45 @@ class FragmentConnexion : Fragment() {
             val nom = nomView.text.toString()
             val motDePasse = motDePasseView.text.toString()
 
-            if(!viewModel.nomValide(nom)){
-                Snackbar.make(requireView(), "Nom invalide", Snackbar.LENGTH_SHORT).show()
-            }else if(!viewModel.motDePasseValide(motDePasse)){
-                Snackbar.make(requireView(), "Mot de passe invalide", Snackbar.LENGTH_SHORT).show()
-            }else if(!viewModel.utilisateurExistant(nom, motDePasse)){
-                Snackbar.make(requireView(), "Utilisateur inexistant", Snackbar.LENGTH_SHORT).show()
-            }else{
-                viewModel.connecter(nom)
-                message.text = "Connected as ${Model.utilisateurActuel}"
+            lifecycleScope.launch {
+                when {
+                    !viewModel.nomValide(nom) -> {
+                        Snackbar.make(requireView(), "Nom invalide", Snackbar.LENGTH_SHORT).show()
+                    }
+                    !viewModel.motDePasseValide(motDePasse) -> {
+                        Snackbar.make(requireView(), "Mot de passe invalide", Snackbar.LENGTH_SHORT).show()
+                    }
+                    !viewModel.utilisateurExistant(nom, motDePasse) -> {
+                        Snackbar.make(requireView(), "Utilisateur inexistant", Snackbar.LENGTH_SHORT).show()
+                    }
+                    else -> {
+                        viewModel.connecter(nom)
+                        message.text = "Connected as ${Model.utilisateurActuel}"
+                    }
+                }
             }
         }
 
         boutonEnregistrer.setOnClickListener {
             val nom = nomView.text.toString()
             val motDePasse = motDePasseView.text.toString()
-            if(!viewModel.nomValide(nom)){
-                Snackbar.make(requireView(), "Nom invalide", Snackbar.LENGTH_SHORT).show()
-            }else if(!viewModel.motDePasseValide(motDePasse)){
-                Snackbar.make(requireView(), "Mot de passe invalide", Snackbar.LENGTH_SHORT).show()
-            }else if(viewModel.utilisateurExistant(nom, motDePasse)){
-                Snackbar.make(requireView(), "Utilisateur deja existant", Snackbar.LENGTH_SHORT).show()
-            }else{
-                viewModel.creerUtilisateur(nom, motDePasse)
-                viewModel.connecter(nom)
-                message.text = "Connected as ${Model.utilisateurActuel}"
+
+            lifecycleScope.launch {
+                when {
+                    !viewModel.nomValide(nom) -> {
+                        Snackbar.make(requireView(), "Nom invalide", Snackbar.LENGTH_SHORT).show()
+                    }
+                    !viewModel.motDePasseValide(motDePasse) -> {
+                        Snackbar.make(requireView(), "Mot de passe invalide", Snackbar.LENGTH_SHORT).show()
+                    }
+                    viewModel.utilisateurExistant(nom, motDePasse) -> {
+                        Snackbar.make(requireView(), "Utilisateur deja existant", Snackbar.LENGTH_SHORT).show()
+                    }
+                    else -> {
+                        viewModel.creerUtilisateur(nom, motDePasse)
+                        message.text = "Connected as ${Model.utilisateurActuel}"
+                    }
+                }
             }
         }
 

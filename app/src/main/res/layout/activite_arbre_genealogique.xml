@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activite_Arbre_Genealogique">
+    tools:context=".view.Activite_Arbre_Genealogique">
 
     <include
         layout="@layout/toolbar"
@@ -18,7 +18,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentChoixFamille"
-        android:name="com.example.lifesimulator.FragmentChoisirFamille"
+        android:name="com.example.lifesimulator.view.FragmentChoisirFamille"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:backgroundTint="@color/white"
@@ -29,7 +29,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentAfficFamille"
-        android:name="com.example.lifesimulator.FragmentAfficherArbre"
+        android:name="com.example.lifesimulator.view.FragmentAfficherArbre"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

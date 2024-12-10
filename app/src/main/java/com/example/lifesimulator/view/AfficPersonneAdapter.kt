@@ -57,5 +57,8 @@ class AfficPersonneAdapter (
         }
     }
     override fun getItemCount(): Int = data.size
+    fun submitList(listePersonnes: MutableList<Personne>) {
+        data = listePersonnes
+    }
 
 }

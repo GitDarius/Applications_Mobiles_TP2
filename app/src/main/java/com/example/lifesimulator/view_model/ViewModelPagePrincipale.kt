@@ -31,6 +31,13 @@ class ViewModelPagePrincipale: ViewModel() {
         }
     }
 
+    fun mettreAJourAdapters(){
+        adapteurBureau!!.submitList(listePersonnesBureau.value!!)
+        adapterListePersonnes!!.submitList(listePersonnes.value!!)
+        adapteurBureau!!.notifyDataSetChanged()
+        adapterListePersonnes!!.notifyDataSetChanged()
+    }
+
     fun ajouterBureau(personne: Personne){
         if(listePersonnesBureau.value!!.size >= Constantes.LIMITE__PERSONNES_BUREAU){
             showSnackbar("Bureau Plein")

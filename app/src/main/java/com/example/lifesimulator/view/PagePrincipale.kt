@@ -7,11 +7,11 @@ import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.lifesimulator.Activite_Arbre_Genealogique
 import com.example.lifesimulator.R
 import com.example.lifesimulator.view_model.ViewModelAjoutPersonne
 import com.example.lifesimulator.view_model.ViewModelConnexion
 import com.example.lifesimulator.view_model.ViewModelPagePrincipale
+import com.google.firebase.FirebaseApp
 
 class PagePrincipale : AppCompatActivity() {
 
@@ -24,6 +24,7 @@ class PagePrincipale : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        FirebaseApp.initializeApp(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

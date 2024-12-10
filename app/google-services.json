@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "571669934926",
+    "project_id": "life-simulator-94310",
+    "storage_bucket": "life-simulator-94310.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571669934926:android:60431162e2f3750e56e41f",
+        "android_client_info": {
+          "package_name": "com.example.lifesimulator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKQTsFIYYIvyoMwMJy68vM13qBYJbR-u8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

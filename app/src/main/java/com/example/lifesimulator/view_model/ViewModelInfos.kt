@@ -14,6 +14,7 @@ import com.bumptech.glide.request.transition.Transition
 import com.example.lifesimulator.model.API.ApiReponse
 import com.example.lifesimulator.model.API.RetrofitInstance
 import com.example.lifesimulator.model.Genre
+import com.example.lifesimulator.model.Model
 import com.example.lifesimulator.model.Outils
 import com.example.lifesimulator.model.Outils.nouveauNom
 import com.example.lifesimulator.model.Personne
@@ -57,6 +58,23 @@ class ViewModelInfos : ViewModel() {
         adapterBureau!!.notifyDataSetChanged()
         adapteurAfficPersonne!!.notifyDataSetChanged()
         fragmentInfos!!.view?.visibility = View.GONE
+    }
+
+    fun mettreAJourAdapteurs() {
+        // Ensure adapters are initialized before attempting updates
+        if (adapterBureau != null) {
+            adapterBureau!!.submitList(mutableListOf())
+            adapterBureau!!.notifyDataSetChanged()
+        } else {
+            Log.e("AdapterError", "adapterBureau is null. Unable to update.")
+        }
+
+        if (adapteurAfficPersonne != null) {
+            adapteurAfficPersonne!!.submitList(Model.listePersonnes)
+            adapteurAfficPersonne!!.notifyDataSetChanged()
+        } else {
+            Log.e("AdapterError", "adapteurAfficPersonne is null. Unable to update.")
+        }
     }
 
     fun avoirNomAleatoire(): String{

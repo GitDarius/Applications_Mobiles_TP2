@@ -1,4 +1,4 @@
-package com.example.lifesimulator
+package com.example.lifesimulator.view
 
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +10,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.activityViewModels
+import com.example.lifesimulator.R
 import com.example.lifesimulator.model.Model
 import com.example.lifesimulator.view_model.ViewModelAffArbre
 

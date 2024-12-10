@@ -1,4 +1,4 @@
-package com.example.lifesimulator
+package com.example.lifesimulator.view
 
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
+import com.example.lifesimulator.R
 import com.example.lifesimulator.model.Outils.obtenirImage
 import com.example.lifesimulator.model.Outils.personne
 import com.example.lifesimulator.model.Personne

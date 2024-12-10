@@ -1,15 +1,12 @@
-package com.example.lifesimulator
+package com.example.lifesimulator.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.lifesimulator.view.PagePrincipale
-import com.unnamed.b.atv.model.TreeNode
-import com.unnamed.b.atv.view.AndroidTreeView
+import com.example.lifesimulator.R
 
 class Activite_Arbre_Genealogique : AppCompatActivity() {
 

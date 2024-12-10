@@ -15,7 +15,7 @@
         android:theme="@style/Theme.LifeSimulator"
         tools:targetApi="31">
         <activity
-            android:name=".Activite_Arbre_Genealogique"
+            android:name=".view.Activite_Arbre_Genealogique"
             android:exported="false" />
         <activity
             android:name=".view.PagePrincipale"

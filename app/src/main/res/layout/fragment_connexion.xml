@@ -33,7 +33,7 @@
             android:backgroundTint="@color/white"
             android:ems="10"
             android:inputType="text"
-            android:text="Name"
+            android:hint="Name"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/connexionMotDePasse"
             app:layout_constraintEnd_toEndOf="parent"

@@ -67,7 +67,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentAjoutPersonne"
-        android:name="com.example.lifesimulator.FragmentAjouterPersonne"
+        android:name="com.example.lifesimulator.view.FragmentAjouterPersonne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -3,13 +3,25 @@ package com.example.lifesimulator.view_model
 import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.lifesimulator.model.Compte
 import com.example.lifesimulator.model.Model
+import com.example.lifesimulator.model.Outils
+import com.example.lifesimulator.model.Outils.chargerPersonnesCompte
+import com.example.lifesimulator.model.Outils.sauvegarderPersonnes
+import com.example.lifesimulator.model.firebase.ajouterCompte
+import com.example.lifesimulator.model.firebase.getCompte
 import com.example.lifesimulator.view.FragmentConnexion
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import okhttp3.internal.wait
 
 class ViewModelConnexion : ViewModel() {
 
     var fragmentConnexion : FragmentConnexion? = null
+
+    var viewModelInfos : ViewModelPagePrincipale? = null
 
     fun partir(){
         fragmentConnexion!!.view?.visibility = View.GONE
@@ -19,17 +31,37 @@ class ViewModelConnexion : ViewModel() {
         fragmentConnexion!!.view?.visibility = View.VISIBLE
     }
 
+    @OptIn(DelicateCoroutinesApi::class)
     fun connecter(nom: String){
-        Model.utilisateurActuel = nom
+        GlobalScope.launch {
+            Model.utilisateurActuel = nom
+            chargerPersonnesCompte()
+        }
+        viewModelInfos!!.mettreAJourAdapters()
         partir()
     }
 
-    fun creerUtilisateur(nom: String, motDePasse: String){
-        Model.listeComptes.add(Compte(nom, hacherString(motDePasse)))
+    fun creerUtilisateur(nom: String, motDePasse: String) {
+        viewModelScope.launch {
+            try {
+                ajouterCompte(Compte(nom, hacherString(motDePasse)))
+                Model.utilisateurActuel = nom
+                sauvegarderPersonnes()
+            } catch (e: Exception) {
+                Log.e("Error", "Erreur lors de la création de l'utilisateur: ${e.message}")
+            }
+        }
+        partir()
     }
 
-    fun utilisateurExistant(nom: String, motDePasse: String): Boolean {
-        return Model.listeComptes.any { it.nom == nom && it.motDePasse == hacherString(motDePasse) }
+    suspend fun utilisateurExistant(nom: String, motDePasse: String): Boolean {
+        Log.i("TAG", "Recherche $nom : ${hacherString(motDePasse)}")
+        return try {
+            getCompte(nom, hacherString(motDePasse)) != null
+        } catch (e: Exception) {
+            Log.e("TAG", "Erreur en vérifiant l'utilisateur: ${e.message}")
+            false
+        }
     }
 
     fun nomValide(nom: String): Boolean{
